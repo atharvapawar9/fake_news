@@ -1,6 +1,4 @@
-make streamlit app for the following code:
-#!/usr/bin/env python
-# coding: utf-8
+
 
 # # Fake news Detection
 
