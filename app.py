@@ -46,8 +46,8 @@ df_true.head(5)
 # In[5]:
 
 
-df_fake["class"] = 0
-df_true["class"] = 1
+df_fake.loc[:, "class"] = 0
+df_true.loc[:, "class"] = 1
 
 
 # Removing last 10 rows from both the dataset, for manual testing  
@@ -80,8 +80,8 @@ df_fake.shape, df_true.shape
 # In[9]:
 
 
-df_fake_manual_testing["class"] = 0
-df_true_manual_testing["class"] = 1
+df_fake_manual_testing.loc[:, "class"] = 0
+df_true_manual_testing.loc[:, "class"] = 1
 
 
 # In[10]:
