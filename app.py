@@ -26,8 +26,14 @@ DT = DecisionTreeClassifier()
 GBC = GradientBoostingClassifier(random_state=0)
 RFC = RandomForestClassifier(random_state=0)
 
-# Load the TF-IDF vectorizer
+# Load the training data
+df = pd.read_csv("your_training_data.csv")  # Replace "your_training_data.csv" with the path to your training data file
+x_train = df["text"]
+y_train = df["class"]
+
+# Initialize and fit the TF-IDF vectorizer
 vectorization = TfidfVectorizer()
+xv_train = vectorization.fit_transform(x_train)
 
 # Function for manual testing
 def manual_testing(news):
