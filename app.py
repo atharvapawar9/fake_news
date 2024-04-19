@@ -367,7 +367,7 @@ def output_lable(n):
         return "Not A Fake News"
     
 def manual_testing(news):
-    testing_news = {"text":[news]}
+    testing_news = {"text": [news]}
     new_def_test = pd.DataFrame(testing_news)
     new_def_test["text"] = new_def_test["text"].apply(wordopt) 
     new_x_test = new_def_test["text"]
@@ -377,12 +377,17 @@ def manual_testing(news):
     pred_GBC = GBC.predict(new_xv_test)
     pred_RFC = RFC.predict(new_xv_test)
 
-    return print("\n\nLR Prediction: {} \nDT Prediction: {} \nGBC Prediction: {} \nRFC Prediction: {}".format(output_lable(pred_LR[0]), 
-                                                                                                              output_lable(pred_DT[0]), 
-                                                                                                              output_lable(pred_GBC[0]), 
-                                                                                                              output_lable(pred_RFC[0])))
+    return {
+        "LR Prediction": output_lable(pred_LR[0]),
+        "DT Prediction": output_lable(pred_DT[0]),
+        "GBC Prediction": output_lable(pred_GBC[0]),
+        "RFC Prediction": output_lable(pred_RFC[0])
+    }
+
 news = st.text_input("Enter the news to detect")
-output = st.write(manual_testing(news))
+predictions = manual_testing(news)
+st.write(predictions)
+
 
 
 
