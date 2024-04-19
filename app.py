@@ -27,7 +27,7 @@ GBC = GradientBoostingClassifier(random_state=0)
 RFC = RandomForestClassifier(random_state=0)
 
 # Load the training data
-df = pd.read_csv("your_training_data.csv")  # Replace "your_training_data.csv" with the path to your training data file
+df = pd.read_csv("Fake.csv")  # Replace "your_training_data.csv" with the path to your training data file
 x_train = df["text"]
 y_train = df["class"]
 
